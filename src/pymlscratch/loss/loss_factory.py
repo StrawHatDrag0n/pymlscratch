@@ -1,5 +1,6 @@
 from .mse import MSE
 from .log_loss import LogLoss
+from .hinge import HingeLoss
 
 class LossFactory:
     """
@@ -11,5 +12,7 @@ class LossFactory:
             return MSE
         elif loss == 'log_loss' or loss == 'logistic_loss':
             return LogLoss()
+        elif loss == 'hinge_loss':
+            return HingeLoss()
         else:
             raise ValueError('Loss function {} not found'.format(loss))
